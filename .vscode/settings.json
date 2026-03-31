@@ -1,0 +1,7 @@
+{
+  "pylint.args": [
+    "--load-plugins=pylint_django",
+    "--django-settings-module=deshawnproject.settings"
+  ],
+  "python-envs.defaultEnvManager": "ms-python.python:pipenv"
+}
