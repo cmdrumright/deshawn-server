@@ -107,3 +107,8 @@ erDiagram
   router.register(r'dogs', DogView, 'dog')
   router.register(r"appointments", AppointmentView, "appointment")
   ```
+
+### Migrating
+
+- command to prepare: `python3 manage.py makemigrations deshawnapi`
+- command to run migration: `python3 manage.py migrate`
