@@ -83,3 +83,27 @@ erDiagram
           # Respond with the newly created appointment in JSON format with a 201 status code
           return Response(serialized.data, status=status.HTTP_201_CREATED)
   ```
+
+### Serializers
+
+- Django serializer class
+- ```py
+  class CitySerializer(serializers.ModelSerializer):
+
+      class Meta:
+          model = City
+          fields = ('id', 'name',)
+  ```
+
+### Routes
+
+- urls.py
+- ```py
+  from deshawnapi.views import WalkerView, CityView, DogView, AppointmentView
+
+  router = routers.DefaultRouter(trailing_slash=False)
+  router.register(r'walkers', WalkerView, 'walk')
+  router.register(r'cities', CityView, 'city')
+  router.register(r'dogs', DogView, 'dog')
+  router.register(r"appointments", AppointmentView, "appointment")
+  ```
