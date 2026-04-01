@@ -112,3 +112,27 @@ erDiagram
 
 - command to prepare: `python3 manage.py makemigrations deshawnapi`
 - command to run migration: `python3 manage.py migrate`
+
+### Adding new appointments
+
+```bash
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{ "walkerId": 4, "appointmentDate": "2022-11-23" }' \
+  'http://localhost:8000/appointments' | jq
+```
+
+```bash
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{ "walkerId": 1, "appointmentDate": "2022-12-01" }' \
+  'http://localhost:8000/appointments' | jq
+```
+
+### Checking Appointments
+
+```bash
+curl 'http://localhost:8000/appointments' | jq
+
+curl 'http://localhost:8000/appointments/1' | jq
+```
